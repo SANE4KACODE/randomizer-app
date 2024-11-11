@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Рандомайзер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #0077ff;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="https://vk.com/js/api/openapi.js?169"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Рандомайзер</h1>
+        <p id="result">Нажмите кнопку, чтобы получить случайное число.</p>
+        <button onclick="generateRandomNumber()">Получить случайное число</button>
+    </div>
+    
+    <script>
+        // Функция для получения случайного числа в заданном диапазоне
+        function generateRandomNumber() {
+            let min = 1; // Минимальное значение диапазона
+            let max = 100; // Максимальное значение диапазона
+
+            // Генерация случайного числа между min и max
+            let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            
+            // Обновление текста на странице
+            document.getElementById('result').innerText = `Ваше случайное число: ${randomNumber}`;
+        }
+    </script>
+</body>
+</html>
